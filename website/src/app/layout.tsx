@@ -35,11 +35,16 @@ export const metadata: Metadata = {
     siteName: BRAND.name,
     title: BRAND.name,
     description: BRAND.description,
+    images: [{ url: "/assets/og-image.svg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: BRAND.name,
     description: BRAND.description,
+  },
+  icons: {
+    icon: [{ url: "/assets/favicon.svg", type: "image/svg+xml" }],
+    apple: "/assets/icon.svg",
   },
 };
 

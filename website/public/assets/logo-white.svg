@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 80" fill="none">
+  <defs>
+    <marker id="w-ah-teal"   markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L6,3.5 L0,7 Z" fill="#2DD4BF"/>
+    </marker>
+    <marker id="w-ah-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L6,3.5 L0,7 Z" fill="#FB923C"/>
+    </marker>
+    <marker id="w-ah-red"    markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L6,3.5 L0,7 Z" fill="#F87171"/>
+    </marker>
+    <marker id="w-ah-yellow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L6,3.5 L0,7 Z" fill="#FDE047"/>
+    </marker>
+  </defs>
+
+  <!-- Head silhouette (white stroke on dark bg) -->
+  <path
+    d="M40,8 C24,8 12,20 12,36 C12,52 22,62 33,66 C35,68 37.5,70 40,70 C42.5,70 45,68 47,66 C58,62 68,52 68,36 C68,20 56,8 40,8 Z"
+    stroke="white" stroke-width="3.5" stroke-linejoin="round"
+  />
+
+  <!-- Brain arrows — lighter versions for dark bg -->
+  <path d="M41.9,24.2 A11,11 0 0,1 50.8,33.9"
+    stroke="#2DD4BF" stroke-width="4.5" stroke-linecap="round"
+    marker-end="url(#w-ah-teal)"/>
+  <path d="M50.8,38.1 A11,11 0 0,1 41.9,47.0"
+    stroke="#FB923C" stroke-width="4.5" stroke-linecap="round"
+    marker-end="url(#w-ah-orange)"/>
+  <path d="M38.1,47.0 A11,11 0 0,1 29.2,38.1"
+    stroke="#F87171" stroke-width="4.5" stroke-linecap="round"
+    marker-end="url(#w-ah-red)"/>
+  <path d="M29.2,33.9 A11,11 0 0,1 38.1,24.2"
+    stroke="#FDE047" stroke-width="4.5" stroke-linecap="round"
+    marker-end="url(#w-ah-yellow)"/>
+
+  <!-- Wordmark (white) -->
+  <text x="84" y="34"
+    font-family="system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif"
+    font-size="21" font-weight="800" fill="white" letter-spacing="-0.3">
+    DIVERGENT
+  </text>
+  <text x="84" y="56"
+    font-family="system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif"
+    font-size="21" font-weight="800" fill="white" letter-spacing="-0.3">
+    MINDS
+  </text>
+  <text x="85" y="71"
+    font-family="system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif"
+    font-size="11" font-weight="500" fill="rgba(255,255,255,0.65)" letter-spacing="3.5">
+    BERLIN
+  </text>
+</svg>

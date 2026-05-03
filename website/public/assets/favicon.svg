@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <rect width="32" height="32" rx="8" fill="#3730A3"/>
+
+  <!-- Simplified head outline (white) -->
+  <path
+    d="M16,4 C10,4 6,8 6,14 C6,19 9,22 13,23.5 C14,24 15,24.5 16,24.5 C17,24.5 18,24 19,23.5 C23,22 26,19 26,14 C26,8 22,4 16,4 Z"
+    stroke="white" stroke-width="1.8" stroke-linejoin="round"
+  />
+
+  <!-- Mini arrows: center (16,13.5), radius 5 -->
+  <path d="M16.8,8.8 A5,5 0 0,1 21,13" stroke="#2DD4BF" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M21,14 A5,5 0 0,1 16.8,18.2" stroke="#FB923C" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M15.2,18.2 A5,5 0 0,1 11,14" stroke="#F87171" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M11,13 A5,5 0 0,1 15.2,8.8" stroke="#FDE047" stroke-width="2.2" stroke-linecap="round"/>
+</svg>

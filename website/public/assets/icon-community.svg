@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Community / people connected icon -->
+  <!-- Center person -->
+  <circle cx="12" cy="8" r="2.5"/>
+  <path d="M7.5,17 C7.5,14.5 9.5,13 12,13 C14.5,13 16.5,14.5 16.5,17"/>
+  <!-- Left person -->
+  <circle cx="5" cy="7" r="2"/>
+  <path d="M2,15 C2,13 3.5,12 5,12"/>
+  <!-- Right person -->
+  <circle cx="19" cy="7" r="2"/>
+  <path d="M22,15 C22,13 20.5,12 19,12"/>
+  <!-- Connection dots -->
+  <line x1="7" y1="8" x2="9.5" y2="8.5" stroke-dasharray="1,1"/>
+  <line x1="17" y1="8" x2="14.5" y2="8.5" stroke-dasharray="1,1"/>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Custom ADHS brain icon for UI use -->
+  <!-- Head outline -->
+  <path d="M12,2 C7,2 3,5.5 3,10 C3,13.5 5,16 8,17.2 L8,19 C8,19.6 8.4,20 9,20 L15,20 C15.6,20 16,19.6 16,19 L16,17.2 C19,16 21,13.5 21,10 C21,5.5 17,2 12,2 Z"/>
+  <!-- Neural pulse lines inside -->
+  <path d="M8.5,9 C9.5,7.5 11,8 12,9.5 C13,11 14.5,11 15.5,9.5" stroke-width="1.2" opacity="0.7"/>
+  <path d="M8,12 C9,10.5 10.5,11 11.5,12.5" stroke-width="1.2" opacity="0.5"/>
+</svg>

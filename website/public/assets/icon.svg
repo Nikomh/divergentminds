@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <defs>
+    <marker id="ah-teal"   markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L6,3.5 L0,7 Z" fill="#0D9488"/>
+    </marker>
+    <marker id="ah-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L6,3.5 L0,7 Z" fill="#F97316"/>
+    </marker>
+    <marker id="ah-red"    markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L6,3.5 L0,7 Z" fill="#EF4444"/>
+    </marker>
+    <marker id="ah-yellow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L6,3.5 L0,7 Z" fill="#EAB308"/>
+    </marker>
+  </defs>
+
+  <!-- Head silhouette -->
+  <path
+    d="M40,6 C22,6 10,18 10,36 C10,52 20,62 32,66 C34,68 37,70 40,70 C43,70 46,68 48,66 C60,62 70,52 70,36 C70,18 58,6 40,6 Z"
+    stroke="#3730A3" stroke-width="3.5" stroke-linejoin="round"
+  />
+
+  <!-- Brain arrows — clockwise cycle, center (40,35), radius 12 -->
+  <!-- Arrow 1: Teal — top-ish → right-ish -->
+  <path d="M42.1,23.2 A12,12 0 0,1 51.8,33.9"
+    stroke="#0D9488" stroke-width="5" stroke-linecap="round"
+    marker-end="url(#ah-teal)"/>
+
+  <!-- Arrow 2: Orange — right-ish → bottom-ish -->
+  <path d="M51.8,38.1 A12,12 0 0,1 42.1,47.8"
+    stroke="#F97316" stroke-width="5" stroke-linecap="round"
+    marker-end="url(#ah-orange)"/>
+
+  <!-- Arrow 3: Red — bottom-ish → left-ish -->
+  <path d="M37.9,47.8 A12,12 0 0,1 28.2,38.1"
+    stroke="#EF4444" stroke-width="5" stroke-linecap="round"
+    marker-end="url(#ah-red)"/>
+
+  <!-- Arrow 4: Yellow — left-ish → top-ish -->
+  <path d="M28.2,33.9 A12,12 0 0,1 37.9,23.2"
+    stroke="#EAB308" stroke-width="5" stroke-linecap="round"
+    marker-end="url(#ah-yellow)"/>
+</svg>
