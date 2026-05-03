@@ -79,14 +79,16 @@ export default function MeetupsPage() {
         <Separator />
 
         {/* Atmosphäre Illustration */}
-        <Image
-          src="/assets/illustrations/meetup-atmosphaere.png"
-          alt="Sechs Menschen sitzen im Kreis zusammen, entspannte Gesprächsatmosphäre"
-          width={900}
-          height={506}
-          className="w-full rounded-2xl"
-          sizes="(max-width: 768px) 100vw, 900px"
-        />
+        <div className="relative max-h-72 overflow-hidden rounded-2xl">
+          <Image
+            src="/assets/illustrations/meetup-atmosphaere.png"
+            alt="Sechs Menschen sitzen im Kreis zusammen, entspannte Gesprächsatmosphäre"
+            width={900}
+            height={506}
+            className="w-full h-auto object-cover object-center"
+            sizes="(max-width: 768px) 100vw, 900px"
+          />
+        </div>
 
         <Separator />
 
@@ -98,14 +100,16 @@ export default function MeetupsPage() {
           </div>
 
           {/* Format Illustration */}
-          <Image
-            src="/assets/illustrations/meetup-format.png"
-            alt="Vier Szenen zeigen den Ablauf eines MeetUps: Ankommen, Input, Austausch, Netzwerken"
-            width={900}
-            height={506}
-            className="w-full rounded-2xl"
-            sizes="(max-width: 768px) 100vw, 900px"
-          />
+          <div className="relative max-h-64 overflow-hidden rounded-2xl">
+            <Image
+              src="/assets/illustrations/meetup-format.png"
+              alt="Vier Szenen zeigen den Ablauf eines MeetUps: Ankommen, Input, Austausch, Netzwerken"
+              width={900}
+              height={506}
+              className="w-full h-auto object-cover object-center"
+              sizes="(max-width: 768px) 100vw, 900px"
+            />
+          </div>
 
           <div className="grid sm:grid-cols-2 gap-4">
             {MEETUP_FORMAT.map((step) => (
@@ -158,14 +162,16 @@ export default function MeetupsPage() {
         <section className="space-y-5">
           <h2 className="text-2xl font-bold tracking-tight">Wo wir uns treffen</h2>
 
-          <Image
-            src="/assets/illustrations/veranstaltungsort.png"
-            alt="Berliner Straße am Abend, drei Menschen gehen auf einen beleuchteten Eingang zu"
-            width={900}
-            height={600}
-            className="w-full rounded-2xl"
-            sizes="(max-width: 768px) 100vw, 900px"
-          />
+          <div className="relative max-h-80 overflow-hidden rounded-2xl">
+            <Image
+              src="/assets/illustrations/veranstaltungsort.png"
+              alt="Berliner Straße am Abend, drei Menschen gehen auf einen beleuchteten Eingang zu"
+              width={900}
+              height={600}
+              className="w-full h-auto object-cover object-top"
+              sizes="(max-width: 768px) 100vw, 900px"
+            />
+          </div>
 
           <div className="rounded-xl border border-border bg-card p-5 space-y-3">
             <div className="flex items-start gap-3">

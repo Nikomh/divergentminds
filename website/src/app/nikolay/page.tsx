@@ -43,29 +43,33 @@ export default function NikolayPage() {
 
         <Separator />
 
-        {/* KI Community Illustration */}
-        <Image
-          src="/assets/illustrations/ki-community.png"
-          alt="Mann am Laptop, digitale Verbindungslinien zu Community-Mitgliedern"
-          width={700}
-          height={467}
-          className="w-full rounded-2xl"
-          sizes="(max-width: 768px) 100vw, 700px"
-        />
+        <div className="grid lg:grid-cols-2 gap-8 items-start">
+          <section className="space-y-4">
+            <h2 className="text-2xl font-bold tracking-tight">Was ich einbringe</h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Meine Aufgabe ist es, Divergent Minds digital zukunftsfähig zu machen.
+                Nicht als Tech-Spielzeug, sondern als echte Unterstützung für Menschen mit ADHS.
+              </p>
+              <p>
+                KI-Tools können erheblich entlasten: Gedanken strukturieren, Erinnerungssysteme
+                aufbauen, kognitive Last reduzieren. Das bringe ich in die Community.
+              </p>
+            </div>
+          </section>
 
-        <section className="space-y-4">
-          <h2 className="text-2xl font-bold tracking-tight">Was ich einbringe</h2>
-          <div className="space-y-4 text-muted-foreground leading-relaxed">
-            <p>
-              Meine Aufgabe ist es, Divergent Minds digital zukunftsfähig zu machen.
-              Nicht als Tech-Spielzeug, sondern als echte Unterstützung für Menschen mit ADHS.
-            </p>
-            <p>
-              KI-Tools können erheblich entlasten: Gedanken strukturieren, Erinnerungssysteme
-              aufbauen, kognitive Last reduzieren. Das bringe ich in die Community.
-            </p>
+          {/* KI Community Illustration */}
+          <div className="max-w-sm mx-auto w-full">
+            <Image
+              src="/assets/illustrations/ki-community.png"
+              alt="Mann am Laptop, digitale Verbindungslinien zu Community-Mitgliedern"
+              width={384}
+              height={256}
+              className="w-full rounded-2xl"
+              sizes="384px"
+            />
           </div>
-        </section>
+        </div>
 
         <Separator />
 

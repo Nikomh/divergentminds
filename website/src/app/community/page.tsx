@@ -44,14 +44,16 @@ export default function CommunityPage() {
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16 space-y-16">
 
         {/* Community Netzwerk Illustration */}
-        <Image
-          src="/assets/illustrations/community-netzwerk.png"
-          alt="Fünf diverse Menschen stehen zusammen, verbunden durch Punkte und Symbole"
-          width={900}
-          height={600}
-          className="w-full rounded-2xl"
-          sizes="(max-width: 768px) 100vw, 900px"
-        />
+        <div className="relative max-h-80 overflow-hidden rounded-2xl">
+          <Image
+            src="/assets/illustrations/community-netzwerk.png"
+            alt="Fünf diverse Menschen stehen zusammen, verbunden durch Punkte und Symbole"
+            width={900}
+            height={600}
+            className="w-full h-auto object-cover object-center"
+            sizes="(max-width: 768px) 100vw, 900px"
+          />
+        </div>
 
         {/* Was / was nicht */}
         <section className="grid md:grid-cols-2 gap-8 items-start">
@@ -88,14 +90,16 @@ export default function CommunityPage() {
             <p className="text-muted-foreground">Was du von jedem MeetUp erwarten kannst.</p>
           </div>
 
-          <Image
-            src="/assets/illustrations/community-werte.png"
-            alt="Vier Szenen zeigen die Community-Werte: Respekt, Offenheit, kein Druck, Vertraulichkeit"
-            width={700}
-            height={700}
-            className="w-full rounded-2xl"
-            sizes="(max-width: 768px) 100vw, 700px"
-          />
+          <div className="max-w-lg mx-auto">
+            <Image
+              src="/assets/illustrations/community-werte.png"
+              alt="Vier Szenen zeigen die Community-Werte: Respekt, Offenheit, kein Druck, Vertraulichkeit"
+              width={512}
+              height={512}
+              className="w-full rounded-2xl"
+              sizes="512px"
+            />
+          </div>
 
           <div className="grid sm:grid-cols-2 gap-4">
             {COMMUNITY_VALUES.map((val) => (
@@ -135,14 +139,16 @@ export default function CommunityPage() {
         <section className="space-y-6">
           <h2 className="text-2xl font-bold tracking-tight">So wirst du Teil davon</h2>
 
-          <Image
-            src="/assets/illustrations/mitmachen.png"
-            alt="Drei Szenen: Jemand kommt zur Tür herein, sitzt im Kreis, schaut auf das Handy mit Community-App"
-            width={900}
-            height={600}
-            className="w-full rounded-2xl"
-            sizes="(max-width: 768px) 100vw, 900px"
-          />
+          <div className="relative max-h-72 overflow-hidden rounded-2xl">
+            <Image
+              src="/assets/illustrations/mitmachen.png"
+              alt="Drei Szenen: Jemand kommt zur Tür herein, sitzt im Kreis, schaut auf das Handy mit Community-App"
+              width={900}
+              height={600}
+              className="w-full h-auto object-cover object-center"
+              sizes="(max-width: 768px) 100vw, 900px"
+            />
+          </div>
 
           <div className="space-y-4">
             {HOW_TO_JOIN.map((step) => (

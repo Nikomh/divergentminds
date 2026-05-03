@@ -53,14 +53,16 @@ export default function IngoPage() {
         <Separator />
 
         {/* Digital Illustration */}
-        <Image
-          src="/assets/illustrations/digital.png"
-          alt="Mann sitzt entspannt im Sessel mit Smartphone, digitale Organisations-Icons schweben um ihn herum"
-          width={700}
-          height={700}
-          className="w-full rounded-2xl"
-          sizes="(max-width: 768px) 100vw, 700px"
-        />
+        <div className="max-w-xs mx-auto">
+          <Image
+            src="/assets/illustrations/digital.png"
+            alt="Mann sitzt entspannt im Sessel mit Smartphone, digitale Organisations-Icons schweben um ihn herum"
+            width={320}
+            height={320}
+            className="w-full rounded-2xl"
+            sizes="320px"
+          />
+        </div>
 
         <section className="space-y-4">
           <h2 className="text-2xl font-bold tracking-tight">Mein Ansatz</h2>

@@ -53,34 +53,38 @@ export default function JaquelinePage() {
 
         <Separator />
 
-        {/* Neuropsychologie Illustration */}
-        <Image
-          src="/assets/illustrations/neuropsychologie.png"
-          alt="Frau schaut auf Gedankenblasen mit Symbolen zu Familie, Bindung, Gehirn und Emotionen"
-          width={700}
-          height={467}
-          className="w-full rounded-2xl"
-          sizes="(max-width: 768px) 100vw, 700px"
-        />
+        <div className="grid lg:grid-cols-2 gap-8 items-start">
+          <section className="space-y-4">
+            <h2 className="text-2xl font-bold tracking-tight">Wer ich bin</h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Ich habe Psychologie an der Universität Maastricht studiert und arbeite seit
+                über zwölf Jahren in klinischen, beratenden und schulischen Zusammenhängen.
+                Ich habe selbst ADHS. Das macht einen Unterschied.
+              </p>
+              <p>
+                Mein Job ist es, Brücken zu bauen. Zwischen dem, was die Forschung weiß, und dem,
+                was im echten Leben funktioniert. Ohne die Tiefe zu verlieren.
+              </p>
+              <p>
+                Ursprünglich wollte ich Elefanten in Afrika erforschen. Heute arbeite ich gerne
+                mit den Elefanten im Porzellanladen.
+              </p>
+            </div>
+          </section>
 
-        <section className="space-y-4">
-          <h2 className="text-2xl font-bold tracking-tight">Wer ich bin</h2>
-          <div className="space-y-4 text-muted-foreground leading-relaxed">
-            <p>
-              Ich habe Psychologie an der Universität Maastricht studiert und arbeite seit
-              über zwölf Jahren in klinischen, beratenden und schulischen Zusammenhängen.
-              Ich habe selbst ADHS. Das macht einen Unterschied.
-            </p>
-            <p>
-              Mein Job ist es, Brücken zu bauen. Zwischen dem, was die Forschung weiß, und dem,
-              was im echten Leben funktioniert. Ohne die Tiefe zu verlieren.
-            </p>
-            <p>
-              Ursprünglich wollte ich Elefanten in Afrika erforschen. Heute arbeite ich gerne
-              mit den Elefanten im Porzellanladen.
-            </p>
+          {/* Neuropsychologie Illustration */}
+          <div className="max-w-xs mx-auto w-full">
+            <Image
+              src="/assets/illustrations/neuropsychologie.png"
+              alt="Frau schaut auf Gedankenblasen mit Symbolen zu Familie, Bindung, Gehirn und Emotionen"
+              width={400}
+              height={267}
+              className="w-full rounded-2xl"
+              sizes="400px"
+            />
           </div>
-        </section>
+        </div>
 
         <Separator />
 
@@ -96,14 +100,16 @@ export default function JaquelinePage() {
         <Separator />
 
         {/* Methoden Illustration */}
-        <Image
-          src="/assets/illustrations/methoden.png"
-          alt="Therapeutin im Gespräch mit Klienten, Gedankenblasen zeigen verschiedene Therapieansätze"
-          width={700}
-          height={700}
-          className="w-full rounded-2xl"
-          sizes="(max-width: 768px) 100vw, 700px"
-        />
+        <div className="max-w-sm mx-auto">
+          <Image
+            src="/assets/illustrations/methoden.png"
+            alt="Therapeutin im Gespräch mit Klienten, Gedankenblasen zeigen verschiedene Therapieansätze"
+            width={384}
+            height={384}
+            className="w-full rounded-2xl"
+            sizes="384px"
+          />
+        </div>
 
         <section className="space-y-5">
           <h2 className="text-2xl font-bold tracking-tight">Wie ich arbeite</h2>

@@ -13,11 +13,11 @@ export const BRAND = {
 } as const;
 
 export const NAV_LINKS = [
-  { label: "Home",      href: "/" },
-  { label: "MeetUps",  href: "/meetups" },
-  { label: "Community", href: "/community" },
-  { label: "Team",      href: "/#team" },
-  { label: "Kontakt",  href: "/kontakt" },
+  { label: "Home",        href: "/" },
+  { label: "MeetUps",    href: "/meetups" },
+  { label: "Community",  href: "/community" },
+  { label: "Ressourcen", href: "/ressourcen" },
+  { label: "Kontakt",    href: "/kontakt" },
 ] as const;
 
 export const TEAM = [

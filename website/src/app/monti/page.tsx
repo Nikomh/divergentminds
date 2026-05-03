@@ -59,35 +59,39 @@ export default function MontiPage() {
 
         <Separator />
 
-        {/* Coaching Scene Illustration */}
-        <Image
-          src="/assets/illustrations/coaching.png"
-          alt="Zwei Menschen im offenen, warmen Coaching-Gespräch"
-          width={700}
-          height={467}
-          className="w-full rounded-2xl"
-          sizes="(max-width: 768px) 100vw, 700px"
-        />
+        <div className="grid lg:grid-cols-2 gap-8 items-start">
+          <section className="space-y-4">
+            <h2 className="text-2xl font-bold tracking-tight">Wie es angefangen hat</h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Schneiderin, Grafikerin, 20 Jahre Gastronomie, Eventorganisation. Seit 1997
+                selbstständig. Mein Weg war nie geradlinig, und lange wusste ich nicht warum.
+              </p>
+              <p>
+                2011 kam die Diagnose. Kein Schock, eher eine Erleichterung. Endlich hatte all das,
+                was mich mein Leben lang begleitet hatte, einen Namen. Noch im selben Jahr begann ich
+                meine Ausbildung zur Konfliktcoach und Mediatorin.
+              </p>
+              <p>
+                Divergent Minds Berlin habe ich gegründet, weil ich selbst einen solchen Ort gebraucht
+                hätte. Einen Raum, in dem ADHS einfach dazugehört. Keine Erklärungen, kein
+                Entschuldigen.
+              </p>
+            </div>
+          </section>
 
-        <section className="space-y-4">
-          <h2 className="text-2xl font-bold tracking-tight">Wie es angefangen hat</h2>
-          <div className="space-y-4 text-muted-foreground leading-relaxed">
-            <p>
-              Schneiderin, Grafikerin, 20 Jahre Gastronomie, Eventorganisation. Seit 1997
-              selbstständig. Mein Weg war nie geradlinig, und lange wusste ich nicht warum.
-            </p>
-            <p>
-              2011 kam die Diagnose. Kein Schock, eher eine Erleichterung. Endlich hatte all das,
-              was mich mein Leben lang begleitet hatte, einen Namen. Noch im selben Jahr begann ich
-              meine Ausbildung zur Konfliktcoach und Mediatorin.
-            </p>
-            <p>
-              Divergent Minds Berlin habe ich gegründet, weil ich selbst einen solchen Ort gebraucht
-              hätte. Einen Raum, in dem ADHS einfach dazugehört. Keine Erklärungen, kein
-              Entschuldigen.
-            </p>
+          {/* Coaching Scene Illustration */}
+          <div className="max-w-xs mx-auto w-full">
+            <Image
+              src="/assets/illustrations/coaching.png"
+              alt="Zwei Menschen im offenen, warmen Coaching-Gespräch"
+              width={400}
+              height={267}
+              className="w-full rounded-2xl"
+              sizes="400px"
+            />
           </div>
-        </section>
+        </div>
 
         <Separator />
 
@@ -95,14 +99,16 @@ export default function MontiPage() {
           <h2 className="text-2xl font-bold tracking-tight">Womit ich arbeite</h2>
 
           {/* Kompetenzrad */}
-          <Image
-            src="/assets/illustrations/kompetenzen.png"
-            alt="Frau im Zentrum umgeben von sechs Vignetten ihrer Coaching-Methoden"
-            width={700}
-            height={700}
-            className="w-full rounded-2xl"
-            sizes="(max-width: 768px) 100vw, 700px"
-          />
+          <div className="max-w-sm mx-auto">
+            <Image
+              src="/assets/illustrations/kompetenzen.png"
+              alt="Frau im Zentrum umgeben von sechs Vignetten ihrer Coaching-Methoden"
+              width={384}
+              height={384}
+              className="w-full rounded-2xl"
+              sizes="384px"
+            />
+          </div>
 
           <div className="grid sm:grid-cols-2 gap-4">
             {AREAS.map((area) => (
