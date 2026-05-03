@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Mail, Phone, MapPin, Globe } from "lucide-react";
+import { Mail, Phone, MapPin, Globe, Bell } from "lucide-react";
 import { PageHero } from "@/components/ui/page-hero";
-import { ContactForm } from "@/components/ui/contact-form";
+import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { BRAND, TEAM } from "@/lib/constants";
 
@@ -26,15 +26,35 @@ export default function KontaktPage() {
 
         <div className="grid md:grid-cols-2 gap-10 items-start">
 
-          {/* Form */}
+          {/* Form — Coming Soon */}
           <div className="space-y-5">
             <div className="space-y-1">
               <h2 className="text-xl font-bold">Nachricht schreiben</h2>
               <p className="text-sm text-muted-foreground">
-                Nur E-Mail und Nachricht sind Pflicht. Der Rest ist optional.
+                Das Kontaktformular kommt bald.
               </p>
             </div>
-            <ContactForm />
+            <div className="rounded-2xl border border-dashed border-border bg-muted/20 p-7 space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                  <Bell size={18} className="text-primary" />
+                </div>
+                <div>
+                  <Badge variant="secondary">Kommt bald</Badge>
+                </div>
+              </div>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Das Kontaktformular ist noch in Arbeit. In der Zwischenzeit erreichst du uns
+                direkt per E-Mail oder Telefon.
+              </p>
+              <a
+                href={`mailto:${BRAND.email}`}
+                className="inline-flex items-center gap-2 text-sm text-primary font-medium hover:underline"
+              >
+                <Mail size={14} />
+                {BRAND.email}
+              </a>
+            </div>
           </div>
 
           {/* Direktkontakt + Illustration */}

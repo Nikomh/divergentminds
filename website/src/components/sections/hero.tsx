@@ -35,7 +35,7 @@ export function Hero() {
                   <span className="animate-ping absolute inline-flex size-full rounded-full bg-primary opacity-75" />
                   <span className="relative inline-flex size-2.5 rounded-full bg-primary" />
                 </span>
-                Nächstes MeetUp: 09.12. in Berlin
+                Nächstes MeetUp: Coming Soon
               </Badge>
             </motion.div>
 

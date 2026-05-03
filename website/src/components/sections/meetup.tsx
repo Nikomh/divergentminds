@@ -1,6 +1,7 @@
 "use client";
 
-import { Calendar, Clock, MapPin, Users, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { Calendar, Clock, MapPin, Users, ArrowRight, Bell } from "lucide-react";
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -11,8 +12,8 @@ import { MEETUPS } from "@/lib/constants";
 import { fadeUp, stagger, viewport } from "@/lib/motion";
 
 export function MeetupSection() {
-  const next = MEETUPS.find((m) => m.status === "upcoming")!;
-  const past = MEETUPS.filter((m) => m.status === "past");
+  const next = MEETUPS.find((m) => (m.status as string) === "upcoming");
+  const past = MEETUPS.filter((m) => (m.status as string) === "past");
 
   return (
     <section id="meetups" className="py-20 md:py-32 bg-muted/20 border-y border-border/60">
@@ -33,11 +34,11 @@ export function MeetupSection() {
             MeetUps
           </motion.h2>
           <motion.p variants={fadeUp} className="text-muted-foreground">
-            Persönliche Treffen in Berlin Mitte — offen für alle Neurodivergenten und Interessierten.
+            Persönliche Treffen in Berlin Mitte. Offen für alle Neurodivergenten und Interessierten.
           </motion.p>
         </motion.div>
 
-        {/* Next MeetUp — highlighted */}
+        {/* Next MeetUp or Coming Soon */}
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -45,68 +46,81 @@ export function MeetupSection() {
           transition={{ duration: 0.55, ease: [0.4, 0, 0.2, 1] }}
           className="mb-6"
         >
-          <div className="relative rounded-2xl border border-primary/25 overflow-hidden">
-            {/* Background gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-teal-500/5" />
-            <div className="absolute top-0 right-0 w-72 h-72 rounded-full bg-primary/5 -translate-y-1/2 translate-x-1/3 blur-2xl" />
-
-            <div className="relative z-10 p-6 md:p-8">
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-
-                {/* Left: Content */}
-                <div className="space-y-5 flex-1">
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <Badge variant="default">
-                      <span className="relative flex size-1.5 mr-1">
-                        <span className="animate-ping absolute inline-flex size-full rounded-full bg-primary opacity-60" />
-                        <span className="relative inline-flex size-1.5 rounded-full bg-primary" />
-                      </span>
-                      Kommendes MeetUp {next.number}
-                    </Badge>
-                  </div>
-
-                  <div>
-                    <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-2">
-                      {next.theme}
-                    </h3>
-                    {"description" in next && (
-                      <p className="text-muted-foreground leading-relaxed max-w-lg">
-                        {next.description}
-                      </p>
-                    )}
-                  </div>
-
-                  <div className="flex flex-wrap gap-4">
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Calendar size={14} className="text-primary shrink-0" />
-                      {next.date}
+          {next ? (
+            <div className="relative rounded-2xl border border-primary/25 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-teal-500/5" />
+              <div className="absolute top-0 right-0 w-72 h-72 rounded-full bg-primary/5 -translate-y-1/2 translate-x-1/3 blur-2xl" />
+              <div className="relative z-10 p-6 md:p-8">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+                  <div className="space-y-5 flex-1">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <Badge variant="default">
+                        <span className="relative flex size-1.5 mr-1">
+                          <span className="animate-ping absolute inline-flex size-full rounded-full bg-primary opacity-60" />
+                          <span className="relative inline-flex size-1.5 rounded-full bg-primary" />
+                        </span>
+                        Kommendes MeetUp {next.number}
+                      </Badge>
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Clock size={14} className="text-primary shrink-0" />
-                      {next.time}
+                    <div>
+                      <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-2">
+                        {next.theme}
+                      </h3>
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <MapPin size={14} className="text-primary shrink-0" />
-                      {next.location}
+                    <div className="flex flex-wrap gap-4">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <Calendar size={14} className="text-primary shrink-0" />
+                        {next.date}
+                      </div>
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <Clock size={14} className="text-primary shrink-0" />
+                        {next.time}
+                      </div>
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <MapPin size={14} className="text-primary shrink-0" />
+                        {next.location}
+                      </div>
                     </div>
                   </div>
-                </div>
-
-                {/* Right: CTA */}
-                <div className="flex flex-col items-start md:items-end gap-3 shrink-0">
-                  <button
-                    className={cn(buttonVariants({ size: "lg" }), "w-full md:w-auto")}
-                  >
-                    Platz sichern
-                    <ArrowRight size={16} />
-                  </button>
-                  <p className="text-xs text-muted-foreground">
-                    Kostenlos · Ohne Anmeldepflicht
-                  </p>
+                  <div className="flex flex-col items-start md:items-end gap-3 shrink-0">
+                    <button className={cn(buttonVariants({ size: "lg" }), "w-full md:w-auto")}>
+                      Platz sichern <ArrowRight size={16} />
+                    </button>
+                    <p className="text-xs text-muted-foreground">Kostenlos · Ohne Anmeldepflicht</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          ) : (
+            <div className="relative rounded-2xl border border-dashed border-border overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-muted/40 via-transparent to-muted/20" />
+              <div className="relative z-10 p-6 md:p-8">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                  <div className="space-y-3">
+                    <Badge variant="secondary" className="gap-1.5">
+                      <Bell size={10} />
+                      Kommt bald
+                    </Badge>
+                    <h3 className="text-2xl font-bold tracking-tight text-foreground">
+                      MeetUp #4 in Planung
+                    </h3>
+                    <p className="text-muted-foreground max-w-md">
+                      Das nächste Thema ist noch nicht festgelegt. Wir geben Bescheid, sobald Datum und Ort stehen.
+                    </p>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <MapPin size={13} className="text-muted-foreground/60 shrink-0" />
+                      Ackerstraße 169, 10115 Berlin
+                    </div>
+                  </div>
+                  <div className="shrink-0">
+                    <Link href="/community" className={cn(buttonVariants({ variant: "outline", size: "lg" }), "gap-2")}>
+                      Community beitreten <ArrowRight size={16} />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </motion.div>
 
         {/* Past MeetUps */}

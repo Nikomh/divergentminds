@@ -118,8 +118,8 @@ export default function MeetupLibraryPage() {
         {/* Upcoming placeholder */}
         <div className="rounded-2xl border border-dashed border-border p-8 text-center space-y-3 opacity-60">
           <BookOpen size={24} className="mx-auto text-muted-foreground" />
-          <p className="font-semibold text-foreground">MeetUp #4 — Masking vs. Authentizität</p>
-          <p className="text-sm text-muted-foreground">09.12.2025 · Zusammenfassung erscheint danach</p>
+          <p className="font-semibold text-foreground">MeetUp #4 — in Planung</p>
+          <p className="text-sm text-muted-foreground">Datum und Thema stehen noch nicht fest · Zusammenfassung erscheint danach</p>
         </div>
 
         {/* CTA */}

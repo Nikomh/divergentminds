@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
-import { ArrowRight, BookOpen, Beaker, Brain } from "lucide-react";
+import { BookOpen, Beaker, Brain, Bell } from "lucide-react";
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Label } from "@/components/ui/typography";
@@ -17,7 +16,6 @@ const CATEGORY_ICONS: Record<string, React.ElementType> = {
 };
 
 export function RadarSection() {
-  const [email, setEmail] = useState("");
 
   return (
     <section id="radar" className="py-20 md:py-32 border-t border-border/60">
@@ -63,46 +61,24 @@ export function RadarSection() {
               sizes="(max-width: 1024px) 90vw, 45vw"
             />
 
-            {/* Form */}
-            <div className="rounded-2xl border border-border bg-card p-6 space-y-5">
-              <div className="space-y-1">
-                <h3 className="text-lg font-bold tracking-tight text-foreground">
-                  Informiert bleiben
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Maximal zweimal im Monat. Keine Werbung, keine langen Texte.
-                </p>
+            {/* Coming Soon */}
+            <div className="rounded-2xl border border-dashed border-border bg-muted/20 p-6 space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                  <Bell size={16} className="text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-base font-bold tracking-tight text-foreground">
+                    Informiert bleiben
+                  </h3>
+                  <p className="text-xs text-muted-foreground">Der Newsletter kommt bald.</p>
+                </div>
               </div>
-
-              <div className="flex flex-col sm:flex-row gap-2.5">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="deine@email.de"
-                  className={cn(
-                    "flex-1 h-10 rounded-lg border border-input bg-background px-3 text-sm",
-                    "placeholder:text-muted-foreground/60",
-                    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 focus-visible:ring-offset-background"
-                  )}
-                />
-                <button
-                  type="submit"
-                  className={cn(
-                    "inline-flex h-10 items-center justify-center gap-2 rounded-lg px-4",
-                    "bg-primary text-primary-foreground text-sm font-semibold",
-                    "hover:brightness-110 active:scale-[0.98] transition-all duration-200 whitespace-nowrap"
-                  )}
-                >
-                  Anmelden <ArrowRight size={14} />
-                </button>
-              </div>
-
-              <div className="flex flex-wrap gap-2">
-                <Badge variant="muted">Kein Spam</Badge>
-                <Badge variant="muted">Jederzeit abmeldbar</Badge>
-                <Badge variant="muted">DSGVO-konform</Badge>
-              </div>
+              <Badge variant="secondary">Kommt bald</Badge>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Wir arbeiten gerade am Forschungs-Radar. Sobald er startet, kannst du dich hier eintragen
+                und bekommst maximal zweimal im Monat relevante ADHS-Studien direkt ins Postfach.
+              </p>
             </div>
           </motion.div>
 

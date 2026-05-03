@@ -72,16 +72,6 @@ export const TEAM = [
 
 export const MEETUPS = [
   {
-    id: 4,
-    number: "#4",
-    theme: "Masking vs. Authentizität",
-    description: "Wie viel verstecken wir täglich — und was kostet uns das? Wir sprechen über Masking, Burnout-Risiko und den Weg zur Authentizität.",
-    date: "09.12.2025",
-    time: "18:00–21:00 Uhr",
-    location: "Ackerstraße 169, 10115 Berlin",
-    status: "upcoming" as const,
-  },
-  {
     id: 3,
     number: "#3",
     theme: "Masking vs. Authentizität",
