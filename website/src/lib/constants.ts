@@ -6,15 +6,18 @@ export const BRAND = {
     "Eure Plattform für neueste Forschung, praxisnahe Tipps und echten Austausch rund um ADHS – vernetzt, gestärkt, informiert.",
   url: "https://www.divergentminds.berlin",
   email: "m.prior@me.com",
+  phone: "0177-2838555",
   location: "Ackerstraße 169, 10115 Berlin",
+  address: "Bergstraße 70, 10115 Berlin",
+  vatId: "DE264337443",
 } as const;
 
 export const NAV_LINKS = [
   { label: "Home",      href: "/" },
+  { label: "MeetUps",  href: "/meetups" },
+  { label: "Community", href: "/community" },
   { label: "Team",      href: "/#team" },
-  { label: "MeetUps",  href: "/#meetups" },
-  { label: "Community", href: "/#community" },
-  { label: "Kontakt",  href: "/#kontakt" },
+  { label: "Kontakt",  href: "/kontakt" },
 ] as const;
 
 export const TEAM = [
@@ -22,29 +25,33 @@ export const TEAM = [
     id: "monti",
     name: "Monti Prior",
     role: "ADHS Coach · Konfliktcoach · Paarberaterin",
+    shortRole: "Gründerin & ADHS Coach",
     bio: "Seit 2012 Senior Coach. Eigene ADHS-Diagnose 2011 — sie weiß aus erster Hand, wovon sie spricht. Gründerin von Divergent Minds Berlin.",
     quote: "Neurotypisch ist für mich kein Maßstab. Wenn wir aufhören uns zu vergleichen, kann jede/jeder eine persönliche Freiheit erlangen.",
     photo: "/assets/team/monti.jpeg",
+    founder: true,
     website: "https://www.prior-coaching.de",
     email: "m.prior@me.com",
-    founder: true,
+    phone: "0177-2838555",
     href: "/monti",
   },
   {
     id: "jaqueline",
     name: "Jacqueline Eldagsen-Gutowsky",
     role: "Psychologisches Coaching & Beratung",
-    bio: "Master in Psychologie, Universität Maastricht. 12+ Jahre Erfahrung. Schwerpunkte: ADHS, emotionale Dysregulation, Trauma.",
+    shortRole: "Psychologin & Coach",
+    bio: "Master in Psychologie, Universität Maastricht. 12+ Jahre Erfahrung in klinischen und beratenden Feldern. Selbst ADHS-betroffen.",
     quote: "Psychologisches Wissen in den Alltag integrieren, entstigmatisieren und befähigen.",
-    photo: null,
-    initials: "JE",
+    photo: "/assets/team/jaqueline.jpeg",
     website: "https://www.adhsadhs.de",
+    instagram: "@adhs_neuropsychologie",
     href: "/jaqueline",
   },
   {
     id: "ingo",
     name: "Ingo Kemnitzer",
     role: "Digital Coach · Apple Certified Support Professional",
+    shortRole: "Digital Coach",
     bio: "IT-Experte mit eigener Neurodivergenz. Spezialist für ablenkungsarme, intuitive Apple-Lösungen.",
     quote: "Achtsam, verständnisvoll, strukturiert — keine Standard-Lösungen.",
     photo: "/assets/team/ingo.jpeg",
@@ -55,10 +62,11 @@ export const TEAM = [
     id: "nikolay",
     name: "Nikolay Huse",
     role: "AI Enablement Specialist · Change Agent",
+    shortRole: "AI & Technologie",
     bio: "Verbindet KI-Technologie mit dem Community-Aufbau von Divergent Minds Berlin.",
     quote: "KI und Gemeinschaft sind kein Widerspruch — sie verstärken einander.",
     photo: "/assets/team/nikolay.png",
-    href: "/",
+    href: "/nikolay",
   },
 ] as const;
 
@@ -147,4 +155,26 @@ export const STATS = [
   { value: "4+",  label: "MeetUps" },
   { value: "25+", label: "Community-Mitglieder" },
   { value: "3",   label: "Expert:innen" },
+] as const;
+
+export const COMMUNITY_VALUES = [
+  { title: "Respekt",         description: "Jeder Mensch wird so angenommen, wie er ist — Diagnose hin oder her." },
+  { title: "Offenheit",       description: "Keine Hierarchien, kein Fachwissen nötig. Nur echtes Interesse." },
+  { title: "Kein Druck",      description: "Du redest, wenn du willst. Schweigen ist genauso willkommen." },
+  { title: "Vertraulichkeit", description: "Was im Raum gesprochen wird, bleibt im Raum." },
+] as const;
+
+export const MEETUP_FORMAT = [
+  { step: "1", title: "Ankommen",       description: "Kaffee, Wasser, kurzes Kennenlernen. Kein Zwang, sofort zu reden." },
+  { step: "2", title: "Themen-Input",   description: "Ein Expert:in gibt einen kurzen Impuls zum MeetUp-Thema — ca. 20 Minuten." },
+  { step: "3", title: "Austausch",      description: "Offene Runde: Fragen, Erfahrungen, persönliche Geschichten." },
+  { step: "4", title: "Netzwerken",     description: "Wer mag, bleibt noch. Gespräche entstehen ganz natürlich." },
+] as const;
+
+export const MEETUP_FAQ = [
+  { q: "Brauche ich eine ADHS-Diagnose?",      a: "Nein. Du brauchst keine Diagnose, um teilzunehmen. Die MeetUps sind offen für alle, die sich dem Thema Neurodivergenz verbunden fühlen." },
+  { q: "Kostet das etwas?",                     a: "Die MeetUps sind kostenlos. Wir freuen uns aber über ein Getränk vor Ort." },
+  { q: "Muss ich mich anmelden?",               a: "Eine kurze Anmeldung hilft uns bei der Planung, ist aber nicht Pflicht. Einfach vorbeikommen ist auch okay." },
+  { q: "Was passiert, wenn ich introvertiert bin?", a: "Kein Problem. Du musst nicht reden. Viele kommen einfach zum Zuhören — und das ist vollkommen okay." },
+  { q: "Wie groß sind die Gruppen?",            a: "Wir halten die Gruppen bewusst klein: ca. 15–25 Personen. So bleibt der Austausch persönlich und überschaubar." },
 ] as const;

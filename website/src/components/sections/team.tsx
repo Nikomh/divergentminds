@@ -60,22 +60,15 @@ export function TeamSection() {
                 {/* Avatar + name */}
                 <div className="flex items-center gap-4 mb-5">
                   <div className="relative shrink-0">
-                    {"photo" in member && member.photo ? (
-                      <div className="relative size-[72px] rounded-full overflow-hidden ring-2 ring-offset-2 ring-offset-card ring-primary/15 group-hover:ring-primary/40 transition-all duration-300">
-                        <Image
-                          src={member.photo}
-                          alt={member.name}
-                          fill
-                          className="object-cover"
-                          sizes="72px"
-                        />
-                      </div>
-                    ) : (
-                      <div className="flex size-[72px] items-center justify-center rounded-full bg-gradient-brand text-primary-foreground font-bold text-lg ring-2 ring-offset-2 ring-offset-card ring-primary/15">
-                        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                        {(member as any).initials ?? member.name.slice(0, 2)}
-                      </div>
-                    )}
+                    <div className="relative size-[72px] rounded-full overflow-hidden ring-2 ring-offset-2 ring-offset-card ring-primary/15 group-hover:ring-primary/40 transition-all duration-300">
+                      <Image
+                        src={member.photo}
+                        alt={member.name}
+                        fill
+                        className="object-cover"
+                        sizes="72px"
+                      />
+                    </div>
                   </div>
 
                   <div>
