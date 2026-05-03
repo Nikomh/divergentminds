@@ -3,8 +3,10 @@ import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/react";
 import "@/styles/globals.css";
 import { cn } from "@/lib/utils";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { MobileCTA } from "@/components/layout/mobile-cta";
 import { BRAND } from "@/lib/constants";
 
 const geistSans = localFont({
@@ -56,10 +58,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
     >
       <body className="antialiased min-h-dvh flex flex-col">
-        <Navbar />
-        <main className="flex-1 pt-16">{children}</main>
-        <Footer />
-        <Analytics />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          <main className="flex-1 pt-16">{children}</main>
+          <Footer />
+          <MobileCTA />
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   );
