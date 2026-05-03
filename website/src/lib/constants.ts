@@ -104,12 +104,12 @@ export const MEETUPS = [
 ] as const;
 
 export const RECOGNITION_CHIPS = [
-  { text: "Fünf Tabs offen — im Kopf und im Browser", variant: "default"  as const },
+  { text: "Fünf Tabs offen. Im Kopf und im Browser.", variant: "default"  as const },
   { text: "Eigentlich clever, aber die Deadline war gestern",  variant: "accent"   as const },
   { text: "Zu viel erklärt, obwohl keiner gefragt hat",  variant: "muted"   as const },
-  { text: "Immer kurz vor dem Durchstarten — und dann doch nicht", variant: "default" as const },
+  { text: "Immer kurz vor dem Durchstarten. Und dann doch nicht.", variant: "default" as const },
   { text: "Erschöpft von dem, was anderen leichtfällt", variant: "accent"  as const },
-  { text: "Hyperfokus auf alles außer dem, was dran wäre",  variant: "muted"   as const },
+  { text: "Hyperfokus auf alles außer dem, was gerade dran wäre", variant: "muted"   as const },
 ] as const;
 
 export const PILLARS = [
@@ -117,19 +117,19 @@ export const PILLARS = [
     icon: "Users",
     color: "teal"    as const,
     title: "Vernetzen",
-    description: "Echte Treffen in Berlin. Kein Therapiekreis, kein Seminar — Menschen, die sich wirklich verstehen.",
+    description: "Kein Therapiekreis. Einfach Menschen, die dasselbe kennen. Wir treffen uns in Berlin.",
   },
   {
     icon: "BookOpen",
     color: "primary" as const,
     title: "Lernen",
-    description: "Neueste ADHS-Forschung, praxisnah aufbereitet. Was wirklich hilft — ohne akademischen Overhead.",
+    description: "ADHS-Forschung, so aufbereitet, dass man sie auch im Alltag nutzen kann.",
   },
   {
     icon: "Zap",
     color: "amber"   as const,
     title: "Wachsen",
-    description: "Mit Expert:innen, die ADHS aus eigener Erfahrung kennen. Coaching, Tools, konkrete Alltagsstrategien.",
+    description: "Expert:innen, die ADHS nicht nur aus Büchern kennen. Sondern selbst damit leben.",
   },
 ] as const;
 
@@ -158,23 +158,23 @@ export const STATS = [
 ] as const;
 
 export const COMMUNITY_VALUES = [
-  { title: "Respekt",         description: "Jeder Mensch wird so angenommen, wie er ist — Diagnose hin oder her." },
-  { title: "Offenheit",       description: "Keine Hierarchien, kein Fachwissen nötig. Nur echtes Interesse." },
+  { title: "Respekt",         description: "Jeder Mensch wird so angenommen, wie er ist. Diagnose hin oder her." },
+  { title: "Offenheit",       description: "Keine Hierarchien, kein Fachwissen nötig. Nur echtes Interesse aneinander." },
   { title: "Kein Druck",      description: "Du redest, wenn du willst. Schweigen ist genauso willkommen." },
   { title: "Vertraulichkeit", description: "Was im Raum gesprochen wird, bleibt im Raum." },
 ] as const;
 
 export const MEETUP_FORMAT = [
-  { step: "1", title: "Ankommen",       description: "Kaffee, Wasser, kurzes Kennenlernen. Kein Zwang, sofort zu reden." },
-  { step: "2", title: "Themen-Input",   description: "Ein Expert:in gibt einen kurzen Impuls zum MeetUp-Thema — ca. 20 Minuten." },
-  { step: "3", title: "Austausch",      description: "Offene Runde: Fragen, Erfahrungen, persönliche Geschichten." },
-  { step: "4", title: "Netzwerken",     description: "Wer mag, bleibt noch. Gespräche entstehen ganz natürlich." },
+  { step: "1", title: "Ankommen",     description: "Kaffee, Wasser, kurzes Kennenlernen. Kein Zwang, sofort zu reden." },
+  { step: "2", title: "Themen-Input", description: "Eine Person aus dem Team gibt einen kurzen Impuls zum Abend-Thema. Rund 20 Minuten." },
+  { step: "3", title: "Austausch",    description: "Offene Runde. Fragen, Erfahrungen, Geschichten. Was gerade kommt." },
+  { step: "4", title: "Ausklingen",   description: "Wer mag, bleibt noch. Gespräche entstehen von selbst." },
 ] as const;
 
 export const MEETUP_FAQ = [
-  { q: "Brauche ich eine ADHS-Diagnose?",      a: "Nein. Du brauchst keine Diagnose, um teilzunehmen. Die MeetUps sind offen für alle, die sich dem Thema Neurodivergenz verbunden fühlen." },
-  { q: "Kostet das etwas?",                     a: "Die MeetUps sind kostenlos. Wir freuen uns aber über ein Getränk vor Ort." },
-  { q: "Muss ich mich anmelden?",               a: "Eine kurze Anmeldung hilft uns bei der Planung, ist aber nicht Pflicht. Einfach vorbeikommen ist auch okay." },
-  { q: "Was passiert, wenn ich introvertiert bin?", a: "Kein Problem. Du musst nicht reden. Viele kommen einfach zum Zuhören — und das ist vollkommen okay." },
-  { q: "Wie groß sind die Gruppen?",            a: "Wir halten die Gruppen bewusst klein: ca. 15–25 Personen. So bleibt der Austausch persönlich und überschaubar." },
+  { q: "Brauche ich eine ADHS-Diagnose?",         a: "Nein. Die MeetUps sind offen für alle, die sich dem Thema Neurodivergenz verbunden fühlen. Eine Diagnose ist kein Ticket." },
+  { q: "Kostet es etwas?",                         a: "Die MeetUps sind kostenlos. Wir freuen uns über ein Getränk vor Ort, das ist aber kein Muss." },
+  { q: "Muss ich mich anmelden?",                  a: "Eine kurze Anmeldung hilft uns bei der Planung. Einfach so vorbeikommen geht aber auch." },
+  { q: "Was, wenn ich eher introvertiert bin?",    a: "Kein Problem. Du musst gar nichts sagen. Viele kommen zum Zuhören und das ist vollkommen okay." },
+  { q: "Wie viele Menschen kommen?",               a: "Wir halten die Gruppen bewusst klein. Rund 15 bis 25 Personen, damit der Austausch persönlich bleibt." },
 ] as const;

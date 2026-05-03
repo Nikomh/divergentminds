@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Mail } from "lucide-react";
 import { PageHero } from "@/components/ui/page-hero";
@@ -10,25 +11,23 @@ import { cn } from "@/lib/utils";
 import { COMMUNITY_VALUES, BRAND } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Community — Divergent Minds Berlin",
-  description:
-    "Werde Teil der Divergent Minds Community Berlin. Eine offene, respektvolle Gemeinschaft für Erwachsene mit ADHS — ohne Druck, ohne Diagnose-Pflicht.",
+  title: "Community",
+  description: "Werde Teil der Divergent Minds Community Berlin. Offen, respektvoll, ohne Druck.",
 };
-
 
 const WHAT_TO_EXPECT = [
   "Ein geschützter Raum ohne Bewertung",
   "Menschen, die wissen, wie sich ADHS anfühlt",
   "Praxisnahe Tipps statt leere Motivationsfloskeln",
   "Echte Gespräche statt Small Talk",
-  "Experten-Input bei jedem MeetUp",
+  "Experteninput bei jedem MeetUp",
   "Keine Anmeldepflicht, kein Leistungsdruck",
 ];
 
 const HOW_TO_JOIN = [
-  { step: "1", title: "MeetUp besuchen",    desc: "Komm einfach zu einem unserer MeetUps — keine Anmeldung nötig. Die Adresse findest du auf der MeetUps-Seite." },
-  { step: "2", title: "Community-Chat",     desc: "Nach dem ersten MeetUp erhältst du den Einladungslink zu unserem Community-Chat. Dort läuft der Austausch auch zwischen den Events." },
-  { step: "3", title: "Newsletter",         desc: "Abonniere den Forschungs-Radar und bekomm relevante Studien und Ressourcen direkt in dein Postfach." },
+  { step: "1", title: "MeetUp besuchen",  desc: "Komm einfach vorbei. Keine Anmeldung nötig. Die Adresse findest du auf der MeetUps-Seite." },
+  { step: "2", title: "Community-Chat",   desc: "Nach dem ersten MeetUp bekommst du den Einladungslink zu unserem Chat. Dort läuft der Austausch auch zwischen den Events." },
+  { step: "3", title: "Newsletter",       desc: "Abonniere den Forschungs-Radar und bekomm relevante ADHS-Studien und Ressourcen direkt ins Postfach." },
 ];
 
 export default function CommunityPage() {
@@ -36,34 +35,41 @@ export default function CommunityPage() {
     <>
       <PageHero
         label="Mitmachen"
-        title="Die Divergent Minds Community"
-        subtitle="Ein Ort für Erwachsene mit ADHS — echt, offen, ohne Druck."
+        title="Die Community"
+        subtitle="Ein Ort für Erwachsene mit ADHS in Berlin. Echt, offen, ohne Druck."
         backHref="/"
         backLabel="Zur Startseite"
       />
 
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16 space-y-16">
 
-        {/* Was die Community ist */}
-        <section className="grid md:grid-cols-2 gap-8 items-center">
+        {/* Community Netzwerk Illustration */}
+        <Image
+          src="/assets/illustrations/community-netzwerk.png"
+          alt="Fünf diverse Menschen stehen zusammen, verbunden durch Punkte und Symbole"
+          width={900}
+          height={600}
+          className="w-full rounded-2xl"
+          sizes="(max-width: 768px) 100vw, 900px"
+        />
+
+        {/* Was / was nicht */}
+        <section className="grid md:grid-cols-2 gap-8 items-start">
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold tracking-tight">Was Divergent Minds ist — und was nicht</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Was Divergent Minds ist und was nicht</h2>
             <div className="space-y-3 text-muted-foreground leading-relaxed">
               <p>
-                Wir sind keine Selbsthilfegruppe, kein Therapieangebot und kein Verein.
-                Wir sind eine offene Community von Menschen, die anders denken — und
-                stolz darauf sind.
+                Wir sind keine Selbsthilfegruppe. Kein Therapieangebot. Kein Verein.
+                Wir sind eine offene Community von Menschen, die anders denken.
               </p>
               <p>
                 Der Fokus liegt auf echtem Austausch, konkreten Ressourcen und dem Gefühl,
-                nicht allein zu sein. Wissenschaftlich fundiert, menschlich geblieben.
+                nicht allein zu sein. Wissenschaftlich fundiert und menschlich geblieben.
               </p>
             </div>
           </div>
           <div className="space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-4">
-              Was dich erwartet
-            </p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-4">Was dich erwartet</p>
             {WHAT_TO_EXPECT.map((item) => (
               <div key={item} className="flex items-center gap-3 text-sm text-foreground">
                 <div className="size-1.5 rounded-full bg-primary shrink-0" />
@@ -75,14 +81,22 @@ export default function CommunityPage() {
 
         <Separator />
 
-        {/* Community-Werte */}
+        {/* Werte */}
         <section className="space-y-6">
           <div className="space-y-2">
-            <h2 className="text-2xl font-bold tracking-tight">Unsere Werte</h2>
-            <p className="text-muted-foreground">
-              Was uns zusammenhält — und was du von jedem MeetUp erwarten kannst.
-            </p>
+            <h2 className="text-2xl font-bold tracking-tight">Was uns zusammenhält</h2>
+            <p className="text-muted-foreground">Was du von jedem MeetUp erwarten kannst.</p>
           </div>
+
+          <Image
+            src="/assets/illustrations/community-werte.png"
+            alt="Vier Szenen zeigen die Community-Werte: Respekt, Offenheit, kein Druck, Vertraulichkeit"
+            width={700}
+            height={700}
+            className="w-full rounded-2xl"
+            sizes="(max-width: 768px) 100vw, 700px"
+          />
+
           <div className="grid sm:grid-cols-2 gap-4">
             {COMMUNITY_VALUES.map((val) => (
               <Card key={val.title} className="hover:shadow-soft transition-shadow">
@@ -99,20 +113,16 @@ export default function CommunityPage() {
 
         {/* Wer ist dabei */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-bold tracking-tight">Wer ist dabei?</h2>
+          <h2 className="text-2xl font-bold tracking-tight">Wer kommt</h2>
           <p className="text-muted-foreground leading-relaxed">
-            Unsere Community ist bunt: Diagnose oder nicht, jung oder erfahren, frisch diagnostiziert
-            oder schon lange auf dem Weg. Was alle verbindet: die Bereitschaft, offen über das
-            eigene Erleben zu sprechen — und voneinander zu lernen.
+            Unsere Community ist bunt. Diagnose oder nicht, jung oder erfahren, frisch
+            auf dem Weg oder schon lange dabei. Was alle verbindet: die Bereitschaft,
+            offen über das eigene Erleben zu sprechen.
           </p>
           <div className="flex flex-wrap gap-2 pt-2">
             {[
-              "Berufstätige mit ADHS",
-              "Frisch Diagnostizierte",
-              "Menschen auf dem Diagnoseweg",
-              "Partner:innen & Angehörige",
-              "Neurodivergente ohne Diagnose",
-              "Coaches & Fachleute",
+              "Berufstätige mit ADHS", "Frisch Diagnostizierte", "Menschen auf dem Diagnoseweg",
+              "Partner:innen und Angehörige", "Neurodivergente ohne Diagnose", "Coaches und Fachleute",
             ].map((group) => (
               <Badge key={group} variant="secondary" className="text-sm py-1 px-3">{group}</Badge>
             ))}
@@ -123,7 +133,17 @@ export default function CommunityPage() {
 
         {/* Wie mitmachen */}
         <section className="space-y-6">
-          <h2 className="text-2xl font-bold tracking-tight">So wirst du Teil der Community</h2>
+          <h2 className="text-2xl font-bold tracking-tight">So wirst du Teil davon</h2>
+
+          <Image
+            src="/assets/illustrations/mitmachen.png"
+            alt="Drei Szenen: Jemand kommt zur Tür herein, sitzt im Kreis, schaut auf das Handy mit Community-App"
+            width={900}
+            height={600}
+            className="w-full rounded-2xl"
+            sizes="(max-width: 768px) 100vw, 900px"
+          />
+
           <div className="space-y-4">
             {HOW_TO_JOIN.map((step) => (
               <div key={step.step} className="flex gap-5 p-5 rounded-xl border border-border bg-card">
@@ -141,16 +161,11 @@ export default function CommunityPage() {
 
         <Separator />
 
-        {/* Kontakt / Join */}
         <section className="space-y-5">
-          <h2 className="text-2xl font-bold tracking-tight">Direkt Kontakt aufnehmen</h2>
-          <p className="text-muted-foreground">
-            Du hast Fragen, bevor du zum ersten MeetUp kommst? Schreib uns einfach.
-          </p>
-          <a
-            href={`mailto:${BRAND.email}`}
-            className="flex items-center gap-3 p-4 rounded-xl border border-border hover:bg-muted transition-colors max-w-sm"
-          >
+          <h2 className="text-2xl font-bold tracking-tight">Fragen vor dem ersten Mal?</h2>
+          <p className="text-muted-foreground">Schreib uns einfach. Wir antworten innerhalb von 48 Stunden.</p>
+          <a href={`mailto:${BRAND.email}`}
+            className="flex items-center gap-3 p-4 rounded-xl border border-border hover:bg-muted transition-colors max-w-sm">
             <Mail size={16} className="text-primary shrink-0" />
             <div>
               <p className="text-sm font-medium text-foreground">{BRAND.email}</p>
@@ -159,18 +174,17 @@ export default function CommunityPage() {
           </a>
         </section>
 
-        {/* CTA */}
         <div className="rounded-2xl bg-primary text-primary-foreground p-8 text-center space-y-4">
-          <h3 className="text-2xl font-bold">Bereit, dabei zu sein?</h3>
+          <h3 className="text-2xl font-bold">Bereit?</h3>
           <p className="text-primary-foreground/75 max-w-md mx-auto">
-            Termine, Themen, Ressourcen rund um ADHS — respektvoll, offen, ohne Smalltalk-Zwang.
+            Einfach vorbeikommen. Kein Vorab-Formular, kein Dresscode, kein Erwartungsdruck.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3">
             <Link href="/meetups" className={cn(buttonVariants({ size: "lg" }), "bg-white text-primary hover:bg-white/90 gap-2")}>
-              Nächstes MeetUp <ArrowRight size={16} />
+              Zum nächsten MeetUp <ArrowRight size={16} />
             </Link>
             <Link href="/kontakt" className={cn(buttonVariants({ variant: "outline", size: "lg" }), "border-white/30 text-white hover:bg-white/10")}>
-              Kontakt aufnehmen
+              Schreib uns
             </Link>
           </div>
         </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -10,11 +11,9 @@ export function CommunityCTA() {
   return (
     <section id="community" className="relative py-24 md:py-36 overflow-hidden bg-primary">
 
-      {/* Background decoration */}
       <div aria-hidden className="absolute inset-0">
         <div className="absolute top-0 left-0 w-[500px] h-[500px] rounded-full bg-white/5 -translate-x-1/2 -translate-y-1/2 blur-3xl" />
         <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-accent/15 translate-x-1/3 translate-y-1/3 blur-3xl" />
-        {/* Subtle grid lines */}
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
@@ -33,7 +32,6 @@ export function CommunityCTA() {
           viewport={viewport}
           className="space-y-8"
         >
-          {/* Logo mark */}
           <motion.div variants={fadeUp} className="flex justify-center">
             <div className="flex size-16 items-center justify-center rounded-2xl bg-white/15 backdrop-blur-sm">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -41,20 +39,16 @@ export function CommunityCTA() {
             </div>
           </motion.div>
 
-          {/* Headline */}
           <motion.div variants={fadeUp} className="space-y-4">
             <h2 className="text-display-md font-bold tracking-tight text-white">
-              Werde Teil von{" "}
-              <br className="hidden sm:block" />
-              Divergent Minds Berlin
+              Komm dazu
             </h2>
             <p className="text-lg text-white/70 leading-relaxed max-w-lg mx-auto">
-              Termine, Themen, Ressourcen rund um ADHS —
-              respektvoll, offen, ohne Smalltalk-Zwang.
+              Termine, Themen, Ressourcen rund um ADHS. Respektvoll, offen,
+              ganz ohne Pflicht zur Selbstdarstellung.
             </p>
           </motion.div>
 
-          {/* CTAs */}
           <motion.div
             variants={fadeUp}
             className="flex flex-col sm:flex-row items-center justify-center gap-3"
@@ -69,7 +63,8 @@ export function CommunityCTA() {
               Community beitreten
               <ArrowRight size={17} />
             </button>
-            <button
+            <Link
+              href="/meetups"
               className={cn(
                 "inline-flex h-12 items-center gap-2 rounded-lg px-8",
                 "border border-white/30 text-white font-semibold text-base",
@@ -77,10 +72,9 @@ export function CommunityCTA() {
               )}
             >
               Nächstes MeetUp
-            </button>
+            </Link>
           </motion.div>
 
-          {/* Location */}
           <motion.div
             variants={fadeUp}
             className="flex items-center justify-center gap-2 text-sm text-white/50"
@@ -89,12 +83,8 @@ export function CommunityCTA() {
             {BRAND.location}
           </motion.div>
 
-          {/* Reassurance chips */}
-          <motion.div
-            variants={fadeUp}
-            className="flex flex-wrap justify-center gap-2 pt-2"
-          >
-            {["Kostenlos", "Ohne Diagnose-Pflicht", "Offen für alle"].map((chip) => (
+          <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-2 pt-2">
+            {["Kostenlos", "Keine Diagnose nötig", "Offen für alle"].map((chip) => (
               <span
                 key={chip}
                 className="inline-flex items-center rounded-full border border-white/15 bg-white/8 px-3 py-1 text-xs text-white/70"

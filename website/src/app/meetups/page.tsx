@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Calendar, Clock, MapPin, Users, ArrowRight, CheckCircle2 } from "lucide-react";
 import { PageHero } from "@/components/ui/page-hero";
@@ -10,9 +11,8 @@ import { cn } from "@/lib/utils";
 import { MEETUPS, MEETUP_FORMAT, MEETUP_FAQ, BRAND } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "MeetUps — Divergent Minds Berlin",
-  description:
-    "Persönliche ADHS-Community-Treffen in Berlin Mitte. Offen für alle — keine Diagnose nötig. Aktuelle und vergangene MeetUp-Termine.",
+  title: "MeetUps",
+  description: "Unsere ADHS-Community-Treffen in Berlin Mitte. Offen für alle, keine Diagnose nötig.",
 };
 
 export default function MeetupsPage() {
@@ -24,7 +24,7 @@ export default function MeetupsPage() {
       <PageHero
         label="Events"
         title="MeetUps"
-        subtitle="Persönliche Treffen in Berlin — ohne Anmeldepflicht, ohne Diagnose, ohne Druck."
+        subtitle="Wir treffen uns in Berlin. Kein Programm, kein Druck, keine Pflicht zur Selbstdarstellung."
         backHref="/"
         backLabel="Zur Startseite"
       />
@@ -53,9 +53,7 @@ export default function MeetupsPage() {
                   {next.theme}
                 </h3>
                 {"description" in next && (
-                  <p className="text-muted-foreground leading-relaxed max-w-xl">
-                    {next.description}
-                  </p>
+                  <p className="text-muted-foreground leading-relaxed max-w-xl">{next.description}</p>
                 )}
               </div>
 
@@ -71,7 +69,7 @@ export default function MeetupsPage() {
                 </button>
                 <p className="flex items-center gap-1.5 text-sm text-muted-foreground self-center">
                   <CheckCircle2 size={14} className="text-emerald-500" />
-                  Kostenlos · Keine Anmeldepflicht
+                  Kostenlos, keine Anmeldepflicht
                 </p>
               </div>
             </div>
@@ -80,12 +78,35 @@ export default function MeetupsPage() {
 
         <Separator />
 
-        {/* Wie läuft ein MeetUp ab */}
+        {/* Atmosphäre Illustration */}
+        <Image
+          src="/assets/illustrations/meetup-atmosphaere.png"
+          alt="Sechs Menschen sitzen im Kreis zusammen, entspannte Gesprächsatmosphäre"
+          width={900}
+          height={506}
+          className="w-full rounded-2xl"
+          sizes="(max-width: 768px) 100vw, 900px"
+        />
+
+        <Separator />
+
+        {/* Format */}
         <section className="space-y-6">
           <div className="space-y-2">
-            <h2 className="text-2xl font-bold tracking-tight">Wie läuft ein MeetUp ab?</h2>
-            <p className="text-muted-foreground">Ein typischer Abend bei Divergent Minds — überschaubar, echt, ohne Programmdruck.</p>
+            <h2 className="text-2xl font-bold tracking-tight">Wie ein Abend aussieht</h2>
+            <p className="text-muted-foreground">Ein typischer Abend bei Divergent Minds. Überschaubar, echt, ohne Programmdruck.</p>
           </div>
+
+          {/* Format Illustration */}
+          <Image
+            src="/assets/illustrations/meetup-format.png"
+            alt="Vier Szenen zeigen den Ablauf eines MeetUps: Ankommen, Input, Austausch, Netzwerken"
+            width={900}
+            height={506}
+            className="w-full rounded-2xl"
+            sizes="(max-width: 768px) 100vw, 900px"
+          />
+
           <div className="grid sm:grid-cols-2 gap-4">
             {MEETUP_FORMAT.map((step) => (
               <div key={step.step} className="flex gap-4 p-5 rounded-xl border border-border bg-card">
@@ -103,10 +124,10 @@ export default function MeetupsPage() {
 
         <Separator />
 
-        {/* Vergangene MeetUps */}
+        {/* Vergangene */}
         <section className="space-y-5">
-          <h2 className="text-2xl font-bold tracking-tight">Vergangene MeetUps</h2>
-          <div className="space-y-4">
+          <h2 className="text-2xl font-bold tracking-tight">Was bisher war</h2>
+          <div className="grid sm:grid-cols-2 gap-4">
             {past.map((meetup) => (
               <Card key={meetup.id} className="opacity-80 hover:opacity-100 transition-opacity">
                 <CardHeader className="pb-3">
@@ -114,7 +135,7 @@ export default function MeetupsPage() {
                     <Badge variant="muted">MeetUp {meetup.number}</Badge>
                     {"attendees" in meetup && (
                       <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                        <Users size={12} /> {meetup.attendees} Teilnehmende
+                        <Users size={12} /> {meetup.attendees} dabei
                       </div>
                     )}
                   </div>
@@ -133,16 +154,26 @@ export default function MeetupsPage() {
 
         <Separator />
 
-        {/* Ort */}
-        <section className="space-y-4">
+        {/* Veranstaltungsort */}
+        <section className="space-y-5">
           <h2 className="text-2xl font-bold tracking-tight">Wo wir uns treffen</h2>
+
+          <Image
+            src="/assets/illustrations/veranstaltungsort.png"
+            alt="Berliner Straße am Abend, drei Menschen gehen auf einen beleuchteten Eingang zu"
+            width={900}
+            height={600}
+            className="w-full rounded-2xl"
+            sizes="(max-width: 768px) 100vw, 900px"
+          />
+
           <div className="rounded-xl border border-border bg-card p-5 space-y-3">
             <div className="flex items-start gap-3">
               <MapPin size={18} className="text-primary shrink-0 mt-0.5" />
               <div>
                 <p className="font-semibold text-foreground">{BRAND.location}</p>
                 <p className="text-sm text-muted-foreground mt-1">
-                  Berlin Mitte — gut erreichbar mit U8 (Rosenthaler Platz) oder S-Bahn (Nordbahnhof).
+                  Berlin Mitte. Gut erreichbar mit der U8 (Rosenthaler Platz) oder S-Bahn (Nordbahnhof).
                 </p>
               </div>
             </div>
@@ -156,10 +187,7 @@ export default function MeetupsPage() {
           <h2 className="text-2xl font-bold tracking-tight">Häufige Fragen</h2>
           <div className="space-y-3">
             {MEETUP_FAQ.map((item) => (
-              <details
-                key={item.q}
-                className="group rounded-xl border border-border bg-card px-5 py-4 cursor-pointer"
-              >
+              <details key={item.q} className="group rounded-xl border border-border bg-card px-5 py-4 cursor-pointer">
                 <summary className="flex items-center justify-between font-semibold text-foreground text-sm list-none gap-4">
                   {item.q}
                   <span className="shrink-0 text-muted-foreground group-open:rotate-45 transition-transform duration-200 text-lg leading-none">+</span>
@@ -172,12 +200,12 @@ export default function MeetupsPage() {
 
         {/* CTA */}
         <div className="rounded-2xl bg-primary text-primary-foreground p-8 text-center space-y-4">
-          <h3 className="text-2xl font-bold">Dabei sein</h3>
+          <h3 className="text-2xl font-bold">Einfach vorbeikommen</h3>
           <p className="text-primary-foreground/75 max-w-md mx-auto">
-            Keine Anmeldung nötig. Einfach vorbeikommen — wir freuen uns auf dich.
+            Keine Anmeldung nötig. Wir freuen uns, wenn du da bist.
           </p>
           <Link href="/community" className={cn(buttonVariants({ size: "lg" }), "bg-white text-primary hover:bg-white/90 gap-2")}>
-            Community beitreten <ArrowRight size={16} />
+            Zur Community <ArrowRight size={16} />
           </Link>
         </div>
       </div>

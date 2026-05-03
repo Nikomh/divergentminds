@@ -11,9 +11,9 @@ import { fadeUp, stagger, viewport } from "@/lib/motion";
 const ICONS = { Users, BookOpen, Zap };
 
 const pillarColors = {
-  teal:    { bg: "bg-teal-500/10",   text: "text-teal-600 dark:text-teal-400"   },
-  primary: { bg: "bg-primary/10",    text: "text-primary"                        },
-  amber:   { bg: "bg-amber-500/10",  text: "text-amber-600 dark:text-amber-400"  },
+  teal:    { bg: "bg-teal-500/10",  text: "text-teal-600 dark:text-teal-400"  },
+  primary: { bg: "bg-primary/10",   text: "text-primary"                       },
+  amber:   { bg: "bg-amber-500/10", text: "text-amber-600 dark:text-amber-400" },
 };
 
 export function WhatIsDM() {
@@ -21,7 +21,6 @@ export function WhatIsDM() {
     <section className="py-20 md:py-32">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
 
-        {/* Header */}
         <motion.div
           variants={stagger}
           initial="hidden"
@@ -40,9 +39,11 @@ export function WhatIsDM() {
             <br />
             <span className="text-gradient">Eine echte Community.</span>
           </motion.h2>
+          <motion.p variants={fadeUp} className="mt-4 text-muted-foreground">
+            Wir sind Menschen mit ADHS, die sich gegenseitig kennen. Nicht aus Büchern.
+          </motion.p>
         </motion.div>
 
-        {/* 3 Pillars */}
         <motion.div
           variants={stagger}
           initial="hidden"
@@ -81,7 +82,6 @@ export function WhatIsDM() {
           viewport={viewport}
           className="relative rounded-2xl border border-border bg-card p-8 md:p-10"
         >
-          {/* Decorative quote mark */}
           <div
             aria-hidden
             className="absolute top-6 right-8 text-8xl font-serif leading-none text-primary/8 select-none"
@@ -90,7 +90,6 @@ export function WhatIsDM() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-start gap-6 relative z-10">
-            {/* Monti photo */}
             <motion.div variants={fadeUp} className="shrink-0">
               <div className="relative size-16 rounded-full overflow-hidden ring-2 ring-primary/20 ring-offset-2 ring-offset-card">
                 <Image
@@ -106,11 +105,11 @@ export function WhatIsDM() {
             <motion.div variants={fadeUp} className="space-y-4">
               <blockquote className="text-lg md:text-xl text-foreground leading-relaxed font-medium">
                 &bdquo;Neurotypisch ist für mich kein Maßstab. Wenn wir aufhören uns zu vergleichen,
-                kann jede/jeder eine persönliche Freiheit erlangen.&ldquo;
+                kann jede und jeder eine persönliche Freiheit erlangen.&ldquo;
               </blockquote>
               <footer className="space-y-0.5">
                 <p className="font-semibold text-foreground text-sm">Monti Prior</p>
-                <p className="text-xs text-muted-foreground">Gründerin · ADHS Coach</p>
+                <p className="text-xs text-muted-foreground">Gründerin, ADHS Coach</p>
               </footer>
             </motion.div>
           </div>

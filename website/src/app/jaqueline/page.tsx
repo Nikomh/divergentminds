@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Globe, ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/ui/page-hero";
@@ -9,27 +10,23 @@ import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Jacqueline Eldagsen-Gutowsky — Psychologisches Coaching",
-  description:
-    "Jacqueline Eldagsen-Gutowsky ist Psychologin und Coach mit Master-Abschluss der Universität Maastricht. Spezialisiert auf ADHS, emotionale Dysregulation und Trauma.",
+  title: "Jacqueline Eldagsen-Gutowsky",
+  description: "Jacqueline Eldagsen-Gutowsky ist Psychologin und Coach, spezialisiert auf ADHS und Neuropsychologie.",
 };
 
 const FOCUS = [
-  "ADHS bei Erwachsenen & Kindern",
-  "Emotionale Dysregulation",
-  "Bindungsfragen",
-  "Trauma & Traumafolgen",
-  "Familiendynamiken",
-  "Selbstwert & Identität",
+  "ADHS bei Erwachsenen und Kindern", "Emotionale Dysregulation",
+  "Bindungsfragen", "Trauma und Traumafolgen",
+  "Familiendynamiken", "Selbstwert und Identität",
 ];
 
 const METHODS = [
-  { name: "ACT",                      desc: "Acceptance & Commitment Therapy" },
-  { name: "EMDR-basiert",             desc: "Eye Movement Desensitization and Reprocessing" },
-  { name: "CBASP",                    desc: "Cognitive Behavioral Analysis System of Psychotherapy" },
-  { name: "Klientenzentriert",        desc: "Gesprächstherapie nach Carl Rogers" },
-  { name: "Verhaltenstherapeutisch",  desc: "Kognitive Verhaltenstherapie" },
-  { name: "Tiefenpsychologisch",      desc: "Arbeit mit unbewussten Mustern" },
+  { name: "ACT",                  desc: "Acceptance and Commitment Therapy" },
+  { name: "EMDR-basiert",         desc: "Eye Movement Desensitization and Reprocessing" },
+  { name: "CBASP",                desc: "Cognitive Behavioral Analysis System of Psychotherapy" },
+  { name: "Klientenzentriert",    desc: "Gesprächstherapie nach Carl Rogers" },
+  { name: "Verhaltenstherapie",   desc: "Kognitive Verhaltenstherapie" },
+  { name: "Tiefenpsychologisch",  desc: "Arbeit mit unbewussten Mustern" },
 ];
 
 export default function JaquelinePage() {
@@ -38,7 +35,7 @@ export default function JaquelinePage() {
       <PageHero
         label="Das Team"
         title="Jacqueline Eldagsen-Gutowsky"
-        subtitle="Psychologisches Coaching & Beratung — persönlich, proaktiv, wertschätzend"
+        subtitle="Psychologisches Coaching und Beratung"
         photo="/assets/team/jaqueline.jpeg"
         photoAlt="Jacqueline Eldagsen-Gutowsky"
         backHref="/#team"
@@ -48,41 +45,45 @@ export default function JaquelinePage() {
 
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12 md:py-16 space-y-14">
 
-        {/* Quote */}
         <blockquote className="border-l-4 border-teal-500 pl-5 py-1">
           <p className="text-xl md:text-2xl font-medium text-foreground leading-relaxed italic">
-            &bdquo;Psychologisches Wissen in den Alltag integrieren, entstigmatisieren — und Menschen
-            unterstützen, sich selbst neu zu begegnen.&ldquo;
+            &bdquo;Psychologisches Wissen soll im Alltag ankommen. Nicht im Fachbegriff verschwinden.&ldquo;
           </p>
         </blockquote>
 
         <Separator />
 
-        {/* Wer bin ich */}
+        {/* Neuropsychologie Illustration */}
+        <Image
+          src="/assets/illustrations/neuropsychologie.png"
+          alt="Frau schaut auf Gedankenblasen mit Symbolen zu Familie, Bindung, Gehirn und Emotionen"
+          width={700}
+          height={467}
+          className="w-full rounded-2xl"
+          sizes="(max-width: 768px) 100vw, 700px"
+        />
+
         <section className="space-y-4">
           <h2 className="text-2xl font-bold tracking-tight">Wer ich bin</h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              Ich bin Spezialistin für Neuropsychologie mit Master-Abschluss der Universität
-              Maastricht — und selbst von ADHS betroffen. Das macht den Unterschied: Ich spreche
-              nicht über das Thema, ich lebe damit.
+              Ich habe Psychologie an der Universität Maastricht studiert und arbeite seit
+              über zwölf Jahren in klinischen, beratenden und schulischen Zusammenhängen.
+              Ich habe selbst ADHS. Das macht einen Unterschied.
             </p>
             <p>
-              Mit über 12 Jahren Erfahrung in klinischen, beratenden und schulischen Feldern bringe
-              ich wissenschaftliche Erkenntnisse in den Alltag. Ich bin Rednerin und Vermittlerin
-              zwischen dem, was die Forschung zeigt, und dem, was im echten Leben funktioniert.
+              Mein Job ist es, Brücken zu bauen. Zwischen dem, was die Forschung weiß, und dem,
+              was im echten Leben funktioniert. Ohne die Tiefe zu verlieren.
             </p>
             <p>
-              Mein ursprünglicher Traum: Elefanten in Afrika erforschen, wie Jane Goodall. Heute
-              arbeite ich gerne mit &bdquo;Elefanten im Porzellanladen&ldquo; — also Menschen, die viel
-              mitbringen und oft zu wenig dafür anerkannt werden.
+              Ursprünglich wollte ich Elefanten in Afrika erforschen. Heute arbeite ich gerne
+              mit den Elefanten im Porzellanladen.
             </p>
           </div>
         </section>
 
         <Separator />
 
-        {/* Expertise */}
         <section className="space-y-5">
           <h2 className="text-2xl font-bold tracking-tight">Schwerpunkte</h2>
           <div className="flex flex-wrap gap-2">
@@ -94,12 +95,21 @@ export default function JaquelinePage() {
 
         <Separator />
 
-        {/* Methoden */}
+        {/* Methoden Illustration */}
+        <Image
+          src="/assets/illustrations/methoden.png"
+          alt="Therapeutin im Gespräch mit Klienten, Gedankenblasen zeigen verschiedene Therapieansätze"
+          width={700}
+          height={700}
+          className="w-full rounded-2xl"
+          sizes="(max-width: 768px) 100vw, 700px"
+        />
+
         <section className="space-y-5">
-          <h2 className="text-2xl font-bold tracking-tight">Meine Methoden</h2>
-          <p className="text-muted-foreground">
-            Mein Ansatz ist integrativ — ich kombiniere unterschiedliche Methoden je nach Mensch
-            und Situation. Regelmäßige Teilnahme an Fachkongressen hält mich auf dem Stand der Forschung.
+          <h2 className="text-2xl font-bold tracking-tight">Wie ich arbeite</h2>
+          <p className="text-muted-foreground leading-relaxed">
+            Integrativ. Das bedeutet: Ich nehme, was passt, nicht was gerade Trend ist.
+            Ich bin regelmäßig auf Fachkongressen, damit das auf dem Stand der Forschung bleibt.
           </p>
           <div className="grid sm:grid-cols-2 gap-3">
             {METHODS.map((m) => (
@@ -115,21 +125,18 @@ export default function JaquelinePage() {
 
         <Separator />
 
-        {/* Rolle bei DM */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-bold tracking-tight">Rolle bei Divergent Minds</h2>
+          <h2 className="text-2xl font-bold tracking-tight">Meine Rolle bei Divergent Minds</h2>
           <p className="text-muted-foreground leading-relaxed">
-            Bei unseren MeetUps übernehme ich die Rolle der psychologischen Expertin und Speakerin.
-            Ich mache komplexe Sachverhalte verständlich — ohne die Tiefe zu verlieren.
-            Was die Wissenschaft über ADHS weiß, soll bei dir ankommen, nicht im Fachvokabular verschwinden.
+            Bei unseren MeetUps bringe ich den wissenschaftlichen Input. Ich erkläre, was die
+            Forschung zu ADHS sagt, und mache es greifbar. Kein Vortrag, sondern ein Gespräch.
           </p>
         </section>
 
         <Separator />
 
-        {/* Kontakt */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-bold tracking-tight">Kontakt & Online</h2>
+          <h2 className="text-2xl font-bold tracking-tight">Online</h2>
           <div className="flex flex-col sm:flex-row gap-3">
             <a href="https://www.adhsadhs.de" target="_blank" rel="noopener noreferrer"
               className="flex items-center gap-3 p-4 rounded-xl border border-border hover:bg-muted transition-colors flex-1">
@@ -144,11 +151,10 @@ export default function JaquelinePage() {
           </div>
         </section>
 
-        {/* CTA */}
         <div className="rounded-2xl border border-teal-500/20 bg-teal-500/5 p-7 text-center space-y-4">
           <h3 className="text-xl font-bold">Jacqueline beim MeetUp erleben</h3>
           <p className="text-muted-foreground">
-            Bei unseren Events spricht Jacqueline über Neuropsychologie — verständlich, direkt, mit Tiefe.
+            Sie erklärt Neuropsychologie so, dass man sie danach auch wirklich nutzen kann.
           </p>
           <Link href="/meetups" className={cn(buttonVariants({ size: "lg" }), "gap-2 bg-teal-600 hover:bg-teal-700 border-0")}>
             Zum nächsten MeetUp <ArrowRight size={16} />
